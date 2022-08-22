@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/poc-masterarbeit-ss22/static/css/main.0c98c7ed.css",
+    "main.js": "/poc-masterarbeit-ss22/static/js/main.b46d3341.js",
+    "index.html": "/poc-masterarbeit-ss22/index.html",
+    "main.0c98c7ed.css.map": "/poc-masterarbeit-ss22/static/css/main.0c98c7ed.css.map",
+    "main.b46d3341.js.map": "/poc-masterarbeit-ss22/static/js/main.b46d3341.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0c98c7ed.css",
+    "static/js/main.b46d3341.js"
+  ]
+}
