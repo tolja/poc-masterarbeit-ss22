@@ -2771,6 +2771,71 @@ const StepFinal = (props) => {
                 bothFound = true
             }
 
+        } else if (convertedsecurityValue.condition_3) {
+            if (convertedsecurityValue.condition_3.includes(standardData.security.condition_3.ssr)) {
+                ssrValue += standardData.security.condition_3.ssr * standardData.security.condition_3.percent
+                ssrFound = true
+            }
+            if (convertedsecurityValue.condition_3.includes(standardData.security.condition_3.csr)) {
+                csrValue += standardData.security.condition_3.csr * standardData.security.condition_3.percent
+                csrFound = true
+            }
+            if (convertedsecurityValue.condition_3.includes(standardData.security.condition_3.both)) {
+                bothValue += standardData.security.condition_3.both * standardData.security.condition_3.percent
+                bothFound = true
+            }
+
+            if (!csrFound && !bothFound && [6, 7, 8, 9].indexOf(standardData.security.condition_3.ssr) !== -1 && (convertedsecurityValue.condition_3.includes(10))) {
+                ssrValue += standardData.security.condition_3.ssr * standardData.security.condition_3.percent
+                ssrFound = true
+            }
+            if (!csrFound && !bothFound && [2, 3, 4, 5].indexOf(standardData.security.condition_3.ssr) !== -1 && (convertedsecurityValue.condition_3.includes(1))) {
+                ssrValue += standardData.security.condition_3.ssr * standardData.security.condition_3.percent
+                ssrFound = true
+            }
+            if (!csrFound && !bothFound && includesAll(convertedsecurityValue.condition_3, [6, 7, 8, 9]) && standardData.security.condition_3.ssr === 10) {
+                ssrValue += standardData.security.condition_3.ssr * standardData.security.condition_3.percent
+                ssrFound = true
+            }
+            if (!csrFound && !bothFound && includesAll(convertedsecurityValue.condition_3, [2, 3, 4, 5]) && standardData.security.condition_3.ssr === 1) {
+                ssrValue += standardData.security.condition_3.ssr * standardData.security.condition_3.percent
+                ssrFound = true
+            }
+
+            if (!ssrFound && !bothFound && [6, 7, 8, 9].indexOf(standardData.security.condition_3.csr) !== -1 && (convertedsecurityValue.condition_3.includes(10))) {
+                csrValue += standardData.security.condition_3.csr * standardData.security.condition_3.percent
+                csrFound = true
+            }
+            if (!ssrFound && !bothFound && [2, 3, 4, 5].indexOf(standardData.security.condition_3.csr) !== -1 && (convertedsecurityValue.condition_3.includes(1))) {
+                csrValue += standardData.security.condition_3.csr * standardData.security.condition_3.percent
+                csrFound = true
+            }
+            if (!ssrFound && !bothFound && includesAll(convertedsecurityValue.condition_3, [6, 7, 8, 9]) && standardData.security.condition_3.csr === 10) {
+                csrValue += standardData.security.condition_3.csr * standardData.security.condition_3.percent
+                csrFound = true
+            }
+            if (!ssrFound && !bothFound && includesAll(convertedsecurityValue.condition_3, [2, 3, 4, 5]) && standardData.security.condition_3.csr === 1) {
+                csrValue += standardData.security.condition_3.csr * standardData.security.condition_3.percent
+                csrFound = true
+            }
+
+            if (!csrFound && !ssrFound && [6, 7, 8, 9].indexOf(standardData.security.condition_3.both) !== -1 && (convertedsecurityValue.condition_3.includes(10))) {
+                bothValue += standardData.security.condition_3.both * standardData.security.condition_3.percent
+                bothFound = true
+            }
+            if (!csrFound && !ssrFound && [2, 3, 4, 5].indexOf(standardData.security.condition_3.both) !== -1 && (convertedsecurityValue.condition_3.includes(1))) {
+                bothValue += standardData.security.condition_3.both * standardData.security.condition_3.percent
+                bothFound = true
+            }
+            if (!csrFound && !ssrFound && includesAll(convertedsecurityValue.condition_3, [6, 7, 8, 9]) && standardData.security.condition_3.both === 10) {
+                bothValue += standardData.security.condition_3.both * standardData.security.condition_3.percent
+                bothFound = true
+            }
+            if (!csrFound && !ssrFound && includesAll(convertedsecurityValue.condition_3, [2, 3, 4, 5]) && standardData.security.condition_3.both === 1) {
+                bothValue += standardData.security.condition_3.both * standardData.security.condition_3.percent
+                bothFound = true
+            }
+
         }
     })
 
