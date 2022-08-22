@@ -5,12 +5,12 @@ import React from "react";
 const StepOne = (props) => {
 
     const performanceSchema = Yup.object().shape({
-        performance_condition_1: Yup.number().required('Error Performance').nullable(true),
-        performance_condition_2: Yup.number().required('Error Performance 2').nullable(true),
-        performance_condition_3: Yup.number().required('Error Performance 3').nullable(true),
-        performance_condition_4: Yup.number().required('Error Performance 4').nullable(true),
-        performance_condition_5: Yup.number().required('Error Performance 5').nullable(true),
-        performance_condition_6: Yup.number().required('Error Performance 5').nullable(true),
+        performance_condition_1: Yup.number().required('Bitte bei 1.1 eine Eingabe tätigen').nullable(true),
+        performance_condition_2: Yup.number().required('Bitte bei 1.2 eine Eingabe tätigen').nullable(true),
+        performance_condition_3: Yup.number().required('Bitte bei 1.3 eine Eingabe tätigen').nullable(true),
+        performance_condition_4: Yup.number().required('Bitte bei 1.4 eine Eingabe tätigen').nullable(true),
+        performance_condition_5: Yup.number().required('Bitte bei 1.5 eine Eingabe tätigen').nullable(true),
+        performance_condition_6: Yup.number().required('Bitte bei 1.6 eine Eingabe tätigen').nullable(true),
     });
 
     const handleSubmit = (values) => {
@@ -349,7 +349,6 @@ const StepOne = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>Performance: </strong>
                                 <span
                                     className="error">{formik.errors.performance_condition_1}</span>
 
@@ -360,7 +359,6 @@ const StepOne = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>Performance 2: </strong>
                                 <span
                                     className="error">{formik.errors.performance_condition_2}</span>
 
@@ -371,7 +369,6 @@ const StepOne = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>Performance 3: </strong>
                                 <span
                                     className="error">{formik.errors.performance_condition_3}</span>
 
@@ -382,7 +379,6 @@ const StepOne = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>Performance 4: </strong>
                                 <span
                                     className="error">{formik.errors.performance_condition_4}</span>
 
@@ -393,7 +389,6 @@ const StepOne = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>Performance 5: </strong>
                                 <span
                                     className="error">{formik.errors.performance_condition_5}</span>
 
@@ -404,7 +399,6 @@ const StepOne = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>Performance 6: </strong>
                                 <span
                                     className="error">{formik.errors.performance_condition_6}</span>
 

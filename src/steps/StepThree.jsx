@@ -7,9 +7,9 @@ const StepThree = (props) => {
     const formRef = useRef();
 
     const seoSchema = Yup.object().shape({
-        seo_condition_1: Yup.number().required('Error SEO').nullable(true),
-        seo_condition_2: Yup.number().required('Error SEO 2').nullable(true),
-        seo_condition_3: Yup.number().required('Error SEO 3').nullable(true),
+        seo_condition_1: Yup.number().required('Bitte bei 3.1 eine Eingabe tätigen').nullable(true),
+        seo_condition_2: Yup.number().required('Bitte bei 3.2 eine Eingabe tätigen').nullable(true),
+        seo_condition_3: Yup.number().required('Bitte bei 3.3 eine Eingabe tätigen').nullable(true),
     });
 
     const handleSubmit = (values) => {
@@ -198,7 +198,6 @@ const StepThree = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>SEO: </strong>
                                 <span
                                     className="error">{formik.errors.seo_condition_1}</span>
 
@@ -209,7 +208,6 @@ const StepThree = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>SEO 2: </strong>
                                 <span
                                     className="error">{formik.errors.seo_condition_2}</span>
 
@@ -220,7 +218,6 @@ const StepThree = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>SEO 3: </strong>
                                 <span
                                     className="error">{formik.errors.seo_condition_3}</span>
 
@@ -234,7 +231,7 @@ const StepThree = (props) => {
                                 className="back" onClick={handleBack}>Zurück
                         </button>
                         <button type="submit" name="submit"
-                                className="submit">Nächstes Kriterium
+                                className="submit" disabled={!formik.isValid}>Nächstes Kriterium
                         </button>
                     </div>
 

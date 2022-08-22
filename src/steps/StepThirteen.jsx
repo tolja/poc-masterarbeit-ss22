@@ -7,10 +7,10 @@ const StepThirteen = (props) => {
     const formRef = useRef();
 
     const responsibilitySchema = Yup.object().shape({
-        responsibility_condition_1: Yup.number().required('Error responsible').nullable(true),
-        responsibility_condition_2: Yup.number().required('Error responsible 2').nullable(true),
-        responsibility_condition_3: Yup.number().required('Error responsible 3').nullable(true),
-        responsibility_condition_4: Yup.number().required('Error responsible 3').nullable(true)
+        responsibility_condition_1: Yup.number().required('Bitte bei 13.1 eine Eingabe tätigen').nullable(true),
+        responsibility_condition_2: Yup.number().required('Bitte bei 13.2 eine Eingabe tätigen').nullable(true),
+        responsibility_condition_3: Yup.number().required('Bitte bei 13.3 eine Eingabe tätigen').nullable(true),
+        responsibility_condition_4: Yup.number().required('Bitte bei 13.4 eine Eingabe tätigen').nullable(true)
     });
 
     const handleSubmit = (values) => {
@@ -250,7 +250,6 @@ const StepThirteen = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>resp: </strong>
                                 <span
                                     className="error">{formik.errors.responsibility_condition_1}</span>
 
@@ -261,7 +260,6 @@ const StepThirteen = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>resp 2: </strong>
                                 <span
                                     className="error">{formik.errors.responsibility_condition_2}</span>
 
@@ -272,7 +270,6 @@ const StepThirteen = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>resp 3: </strong>
                                 <span
                                     className="error">{formik.errors.responsibility_condition_3}</span>
 
@@ -283,7 +280,6 @@ const StepThirteen = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>resp 4: </strong>
                                 <span
                                     className="error">{formik.errors.responsibility_condition_4}</span>
 
@@ -297,7 +293,7 @@ const StepThirteen = (props) => {
                                 className="back" onClick={handleBack}>Zurück
                         </button>
                         <button type="submit" name="submit"
-                                className="submit">Zur Auswertung
+                                className="submit" disabled={!formik.isValid}>Zur Auswertung
                         </button>
                     </div>
 

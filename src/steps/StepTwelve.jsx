@@ -7,8 +7,8 @@ const StepTwelve = (props) => {
     const formRef = useRef();
 
     const customerReqSchema = Yup.object().shape({
-        customer_requirements_condition_1: Yup.number().required('Error customer_req').nullable(true),
-        customer_requirements_condition_2: Yup.number().required('Error customer_req 2').nullable(true)
+        customer_requirements_condition_1: Yup.number().required('Bitte bei 12.1 eine Eingabe tätigen').nullable(true),
+        customer_requirements_condition_2: Yup.number().required('Bitte bei 12.2 eine Eingabe tätigen').nullable(true)
     });
 
     const handleSubmit = (values) => {
@@ -146,7 +146,6 @@ const StepTwelve = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>req: </strong>
                                 <span
                                     className="error">{formik.errors.customer_requirements_condition_1}</span>
 
@@ -157,7 +156,6 @@ const StepTwelve = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>req 2: </strong>
                                 <span
                                     className="error">{formik.errors.customer_requirements_condition_2}</span>
 
@@ -171,7 +169,7 @@ const StepTwelve = (props) => {
                                 className="back" onClick={handleBack}>Zurück
                         </button>
                         <button type="submit" name="submit"
-                                className="submit">Nächstes Kriterium
+                                className="submit" disabled={!formik.isValid}>Nächstes Kriterium
                         </button>
                     </div>
 

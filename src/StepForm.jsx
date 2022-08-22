@@ -47,6 +47,7 @@ export default function StepForm() {
         reliable_condition_2: null,
         security_condition_1: null,
         security_condition_2: null,
+        security_condition_3: null,
         extend_condition_1: null,
         extend_condition_2: null,
         resource_condition_1: null,

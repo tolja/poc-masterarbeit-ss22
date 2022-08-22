@@ -7,8 +7,8 @@ const StepTen = (props) => {
     const formRef = useRef();
 
     const extendSchema = Yup.object().shape({
-        extend_condition_1: Yup.number().required('Error extend').nullable(true),
-        extend_condition_2: Yup.number().required('Error extend 2').nullable(true)
+        extend_condition_1: Yup.number().required('Bitte bei 10.1 eine Eingabe tätigen').nullable(true),
+        extend_condition_2: Yup.number().required('Bitte bei 10.2 eine Eingabe tätigen').nullable(true)
     });
 
     const handleSubmit = (values) => {
@@ -145,7 +145,6 @@ const StepTen = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>extend: </strong>
                                 <span
                                     className="error">{formik.errors.extend_condition_1}</span>
 
@@ -156,7 +155,6 @@ const StepTen = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>extend 2: </strong>
                                 <span
                                     className="error">{formik.errors.extend_condition_2}</span>
 
@@ -170,7 +168,7 @@ const StepTen = (props) => {
                                 className="back" onClick={handleBack}>Zurück
                         </button>
                         <button type="submit" name="submit"
-                                className="submit">Nächstes Kriterium
+                                className="submit" disabled={!formik.isValid}>Nächstes Kriterium
                         </button>
                     </div>
 

@@ -7,8 +7,8 @@ const StepEight = (props) => {
     const formRef = useRef();
 
     const reliabilitySchema = Yup.object().shape({
-        reliable_condition_1: Yup.number().required('Error reliable').nullable(true),
-        reliable_condition_2: Yup.number().required('Error reliable 2').nullable(true)
+        reliable_condition_1: Yup.number().required('Bitte bei 8.1 eine Eingabe tätigen').nullable(true),
+        reliable_condition_2: Yup.number().required('Bitte bei 8.2 eine Eingabe tätigen').nullable(true)
     });
 
     const handleSubmit = (values) => {
@@ -145,7 +145,6 @@ const StepEight = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>reliable: </strong>
                                 <span
                                     className="error">{formik.errors.reliable_condition_1}</span>
 
@@ -156,7 +155,6 @@ const StepEight = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>reliable 2: </strong>
                                 <span
                                     className="error">{formik.errors.reliable_condition_2}</span>
 
@@ -171,7 +169,7 @@ const StepEight = (props) => {
                                 className="back" onClick={handleBack}>Zurück
                         </button>
                         <button type="submit" name="submit"
-                                className="submit">Nächstes Kriterium
+                                className="submit" disabled={!formik.isValid}>Nächstes Kriterium
                         </button>
                     </div>
 

@@ -7,10 +7,10 @@ const StepSeven = (props) => {
     const formRef = useRef();
 
     const availabilitySchema = Yup.object().shape({
-        availability_condition_1: Yup.number().required('Error avail').nullable(true),
-        availability_condition_2: Yup.number().required('Error avail 2').nullable(true),
-        availability_condition_3: Yup.number().required('Error avail 3').nullable(true),
-        availability_condition_4: Yup.number().required('Error avail 3').nullable(true)
+        availability_condition_1: Yup.number().required('Bitte bei 7.1 eine Eingabe tätigen').nullable(true),
+        availability_condition_2: Yup.number().required('Bitte bei 7.2 eine Eingabe tätigen').nullable(true),
+        availability_condition_3: Yup.number().required('Bitte bei 7.3 eine Eingabe tätigen').nullable(true),
+        availability_condition_4: Yup.number().required('Bitte bei 7.4 eine Eingabe tätigen').nullable(true)
     });
 
     const handleSubmit = (values) => {
@@ -252,7 +252,6 @@ const StepSeven = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>avail: </strong>
                                 <span
                                     className="error">{formik.errors.availability_condition_1}</span>
 
@@ -263,7 +262,6 @@ const StepSeven = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>avail 2: </strong>
                                 <span
                                     className="error">{formik.errors.availability_condition_2}</span>
 
@@ -274,7 +272,6 @@ const StepSeven = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>avail 3: </strong>
                                 <span
                                     className="error">{formik.errors.availability_condition_3}</span>
 
@@ -285,7 +282,6 @@ const StepSeven = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>avail 4: </strong>
                                 <span
                                     className="error">{formik.errors.availability_condition_4}</span>
 
@@ -300,7 +296,7 @@ const StepSeven = (props) => {
                                 className="back" onClick={handleBack}>Zurück
                         </button>
                         <button type="submit" name="submit"
-                                className="submit">Nächstes Kriterium
+                                className="submit" disabled={!formik.isValid}>Nächstes Kriterium
                         </button>
                     </div>
 

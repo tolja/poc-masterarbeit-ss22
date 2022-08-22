@@ -7,8 +7,8 @@ const StepEleven = (props) => {
     const formRef = useRef();
 
     const resourceSchema = Yup.object().shape({
-        resource_condition_1: Yup.number().required('Error resource').nullable(true),
-        resource_condition_2: Yup.number().required('Error resource 2').nullable(true)
+        resource_condition_1: Yup.number().required('Bitte bei 11.1 eine Eingabe tätigen').nullable(true),
+        resource_condition_2: Yup.number().required('Bitte bei 11.2 eine Eingabe tätigen').nullable(true)
     });
 
     const handleSubmit = (values) => {
@@ -146,7 +146,6 @@ const StepEleven = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>resource: </strong>
                                 <span
                                     className="error">{formik.errors.resource_condition_1}</span>
 
@@ -157,7 +156,6 @@ const StepEleven = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>resource 2: </strong>
                                 <span
                                     className="error">{formik.errors.resource_condition_2}</span>
 
@@ -171,7 +169,7 @@ const StepEleven = (props) => {
                                 className="back" onClick={handleBack}>Zurück
                         </button>
                         <button type="submit" name="submit"
-                                className="submit">Nächstes Kriterium
+                                className="submit" disabled={!formik.isValid}>Nächstes Kriterium
                         </button>
                     </div>
 

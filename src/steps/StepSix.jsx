@@ -7,10 +7,10 @@ const StepSix = (props) => {
     const formRef = useRef();
 
     const flexibilitySchema = Yup.object().shape({
-        flexibility_condition_1: Yup.number().required('Error flex').nullable(true),
-        flexibility_condition_2: Yup.number().required('Error flex 2').nullable(true),
-        flexibility_condition_3: Yup.number().required('Error flex 3').nullable(true),
-        flexibility_condition_4: Yup.number().required('Error flex 4').nullable(true),
+        flexibility_condition_1: Yup.number().required('Bitte bei 6.1 eine Eingabe tätigen').nullable(true),
+        flexibility_condition_2: Yup.number().required('Bitte bei 6.2 eine Eingabe tätigen').nullable(true),
+        flexibility_condition_3: Yup.number().required('Bitte bei 6.3 eine Eingabe tätigen').nullable(true),
+        flexibility_condition_4: Yup.number().required('Bitte bei 6.4 eine Eingabe tätigen').nullable(true),
     });
 
     const handleSubmit = (values) => {
@@ -251,7 +251,6 @@ const StepSix = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>flex: </strong>
                                 <span
                                     className="error">{formik.errors.flexibility_condition_1}</span>
 
@@ -262,7 +261,6 @@ const StepSix = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>flex 2: </strong>
                                 <span
                                     className="error">{formik.errors.flexibility_condition_2}</span>
 
@@ -273,7 +271,6 @@ const StepSix = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>flex 3: </strong>
                                 <span
                                     className="error">{formik.errors.flexibility_condition_3}</span>
 
@@ -284,7 +281,6 @@ const StepSix = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>flex 4: </strong>
                                 <span
                                     className="error">{formik.errors.flexibility_condition_4}</span>
 
@@ -299,7 +295,7 @@ const StepSix = (props) => {
                                 className="back" onClick={handleBack}>Zurück
                         </button>
                         <button type="submit" name="submit"
-                                className="submit">Nächstes Kriterium
+                                className="submit" disabled={!formik.isValid}>Nächstes Kriterium
                         </button>
                     </div>
 

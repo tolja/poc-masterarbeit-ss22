@@ -7,11 +7,11 @@ const StepTwo = (props) => {
     const formRef = useRef();
 
     const uxSchema = Yup.object().shape({
-        ux_condition_1: Yup.number().required('Error UX').nullable(true),
-        ux_condition_2: Yup.number().required('Error UX 2').nullable(true),
-        ux_condition_3: Yup.number().required('Error UX 3').nullable(true),
-        ux_condition_4: Yup.number().required('Error UX 4').nullable(true),
-        ux_condition_5: Yup.number().required('Error UX 5').nullable(true)
+        ux_condition_1: Yup.number().required('Bitte bei 2.1 eine Eingabe tätigen').nullable(true),
+        ux_condition_2: Yup.number().required('Bitte bei 2.2 eine Eingabe tätigen').nullable(true),
+        ux_condition_3: Yup.number().required('Bitte bei 2.3 eine Eingabe tätigen').nullable(true),
+        ux_condition_4: Yup.number().required('Bitte bei 2.4 eine Eingabe tätigen').nullable(true),
+        ux_condition_5: Yup.number().required('Bitte bei 2.5 eine Eingabe tätigen').nullable(true)
     });
 
     const handleSubmit = (values) => {
@@ -302,7 +302,6 @@ const StepTwo = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>UX: </strong>
                                 <span
                                     className="error">{formik.errors.ux_condition_1}</span>
 
@@ -313,7 +312,6 @@ const StepTwo = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>UX 2: </strong>
                                 <span
                                     className="error">{formik.errors.ux_condition_2}</span>
 
@@ -324,7 +322,6 @@ const StepTwo = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>UX 3: </strong>
                                 <span
                                     className="error">{formik.errors.ux_condition_3}</span>
 
@@ -335,7 +332,6 @@ const StepTwo = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>UX 4: </strong>
                                 <span
                                     className="error">{formik.errors.ux_condition_4}</span>
 
@@ -346,7 +342,6 @@ const StepTwo = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>UX 5: </strong>
                                 <span
                                     className="error">{formik.errors.ux_condition_5}</span>
 
@@ -361,7 +356,7 @@ const StepTwo = (props) => {
                                 className="back" onClick={handleBack}>Zurück
                         </button>
                         <button type="submit" name="submit"
-                                className="submit">Nächstes Kriterium
+                                className="submit" disabled={!formik.isValid}>Nächstes Kriterium
                         </button>
                     </div>
 

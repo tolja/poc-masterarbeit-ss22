@@ -7,8 +7,8 @@ const StepFive = (props) => {
     const formRef = useRef();
 
     const maintainSchema = Yup.object().shape({
-        maintain_condition_1: Yup.number().required('Error maintain').nullable(true),
-        maintain_condition_2: Yup.number().required('Error maintain 2').nullable(true)
+        maintain_condition_1: Yup.number().required('Bitte bei 5.1 eine Eingabe tätigen').nullable(true),
+        maintain_condition_2: Yup.number().required('Bitte bei 5.2 eine Eingabe tätigen').nullable(true)
     });
 
     const handleSubmit = (values) => {
@@ -146,7 +146,6 @@ const StepFive = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>maintain: </strong>
                                 <span
                                     className="error">{formik.errors.maintain_condition_1}</span>
 
@@ -157,42 +156,8 @@ const StepFive = (props) => {
                             <div
                                 className="error_element">
 
-                                <strong>maintain 2: </strong>
                                 <span
                                     className="error">{formik.errors.maintain_condition_2}</span>
-
-                            </div>
-                        ) : null}
-
-                        {formik.errors.ux_condition_3 && formik.touched.ux_condition_3 ? (
-                            <div
-                                className="error_element">
-
-                                <strong>UX 3: </strong>
-                                <span
-                                    className="error">{formik.errors.ux_condition_3}</span>
-
-                            </div>
-                        ) : null}
-
-                        {formik.errors.ux_condition_4 && formik.touched.ux_condition_4 ? (
-                            <div
-                                className="error_element">
-
-                                <strong>UX 4: </strong>
-                                <span
-                                    className="error">{formik.errors.ux_condition_4}</span>
-
-                            </div>
-                        ) : null}
-
-                        {formik.errors.ux_condition_5 && formik.touched.ux_condition_5 ? (
-                            <div
-                                className="error_element">
-
-                                <strong>UX 5: </strong>
-                                <span
-                                    className="error">{formik.errors.ux_condition_5}</span>
 
                             </div>
                         ) : null}
@@ -204,7 +169,7 @@ const StepFive = (props) => {
                                 className="back" onClick={handleBack}>Zurück
                         </button>
                         <button type="submit" name="submit"
-                                className="submit">Nächstes Kriterium
+                                className="submit" disabled={!formik.isValid}>Nächstes Kriterium
                         </button>
                     </div>
 
